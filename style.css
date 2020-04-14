@@ -30,21 +30,31 @@ button{
   margin: 1em 0;
 }
 #divborder{
-border:1px solid #679b9b;
+border:1px solid #008E8E;
 background-color:#ffffff;
-color:#679b9b;
+color:#008E8E;
 }
+
 #divborder.active {;
-background-color:#679b9b;
+background-color:#008E8E;
 border:1px solid white;
 color:#fff;
 }
+#divborder:hover{
+  background-color:#018383;
+  color:#fff;
+}
 #replace{
-background-color:#eb4559;
+  background-color:#f90;
 }
 #replace:hover {
-  background-color:#ffb6b6;
-  color:#eb4559;
+  background-color:#ff8000;
+}
+#clear{
+  background-color:#FF5733;
+}
+#clear:hover {
+  background-color:#E23C19;
 }
 #edit {
   border: 1px solid grey;
@@ -54,10 +64,10 @@ background-color:#eb4559;
   min-height: 10em;
 }
 #edit.active div{
-    border: 1px solid #aacfcf;
+    border: 1px solid #eee;
 }
 #edit.active p{
-    border: 1px solid #ffb6b6;
+    border: 1px solid #eed;
 }
 #edit div{
     border: 0px;

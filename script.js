@@ -17,11 +17,18 @@ String.prototype.replaceAll = function (a,b) {
     return temp;
 };
 
-$('a.extra-info').on('click', function(e){
+
+function lapoz(){
   $('#info').toggle();
   $('#app').toggle();
-});
+}
 
+var hash=window.location.hash;
+if(hash==="#info") lapoz();
+
+$('a.extra-info').on('click', function(e){
+  lapoz();
+});
 
 $('#divborder').on('click', function(e){
   if($('#edit').hasClass('active')){
