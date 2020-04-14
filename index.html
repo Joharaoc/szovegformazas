@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Szöveg formázó</title>
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <content>
+      <h1>Szöveg formázó</h1>
+      <section id='app'>
+        <div class="info">
+          <i class="icon-info-sign"></i>
+          <a href="#info" class="extra-info">Hogyan működik?</a>
+        </div>
+        <button type="button" id="replace">formázás</button>
+        <button type="button" class="active" id="divborder">div border</button>
+        <article id="edit" class="active" contenteditable="true">
+        </article>
+      </section>
+      <section id="info">
+        <div class="info">
+          <i class="icon-edit"></i>
+          <a href="#info" class="extra-info">Vissza az apphoz</a>
+        </div>
+        <article class="">
+          <h2>Csere szabályok</h2>
+          <p>Extra szóközök, pontok, kötőjelek eltávolítása</br>
+            <code> .... </code>
+            <i class="icon-arrow-right"></i>
+            <code> ... </code></br>
+            <code> -- </code>
+            <i class="icon-arrow-right"></i>
+            <code> - </code>
+          </p>
+          <p>Extra sortörések eltávolítása</p>
+          <p>Szóközzel kezdődő mondatok javítása</p>
+          <p>Írásjel után szóköz</br>
+            <code> Hello!Mizu?Semmi. </code>
+            <i class="icon-arrow-right"></i>
+            <code> Hello! Mizu? Semmi. </code>
+          </p>
+          <p>Zárójelek</br>
+            <code> vettem két( 2)almát </code>
+            <i class="icon-arrow-right"></i>
+            <code> vettem két (2) almát</code>
+          </p>
+          <p>Matematikai jelek</br>
+            <code> 12-3+1*2=11 </code>
+            <i class="icon-arrow-right"></i>
+            <code> 12 - 3 + 1 * 2 = 11</code>
+          </p>
+        </article>
+      </section>
+    </content>
+    <script src="script.js" charset="utf-8"></script>
+  </body>
+</html>
