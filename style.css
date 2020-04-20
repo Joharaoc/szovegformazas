@@ -29,21 +29,6 @@ button{
   font-size: 1em;
   margin: 1em 0;
 }
-#divborder{
-border:1px solid #008E8E;
-background-color:#ffffff;
-color:#008E8E;
-}
-
-#divborder.active {;
-background-color:#008E8E;
-border:1px solid white;
-color:#fff;
-}
-#divborder:hover{
-  background-color:#018383;
-  color:#fff;
-}
 #replace{
   background-color:#f90;
 }
@@ -57,18 +42,7 @@ color:#fff;
   background-color:#E23C19;
 }
 #edit {
-  border: 1px solid grey;
   margin:1em 0;
-  padding:.5em;
   background: #ffffff;
   min-height: 10em;
-}
-#edit.active div{
-    border: 1px solid #eee;
-}
-#edit.active p{
-    border: 1px solid #eed;
-}
-#edit div{
-    border: 0px;
 }
