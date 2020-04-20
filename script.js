@@ -30,30 +30,41 @@ $('a.extra-info').on('click', function(e){
   lapoz();
 });
 
-$('#divborder').on('click', function(e){
-  if($('#edit').hasClass('active')){
-    $('#divborder').removeClass('active');
-    $('#edit').removeClass('active');
-
-  }else if ($('#edit div').length) {
-    $('#divborder').addClass('active');
-    $('#edit').addClass('active');
-  }
-
+$('#clear').on('click', function(e){
+  $('#edit').html("");
 
 });
 
 $('#replace').on('click', function(e){
-  $('#edit div').removeAttr('style');
+
+var roots=$('#edit');
+for (var i = 0; i < roots.length; i++) {
+  var root = $(roots[i])
+  root.append(root.find("div > div"))
+}
+
+var re = new RegExp(/&nbsp;|<br>/, "g");
+var prevTagName="";
+$('#edit').children().each(function() {
+    var $this = $(this);
+        console.log($this, prevTagName);
+    if($this.html().length != 0 ){
+      $('#edit').append(document.createTextNode($this.html().replace(re," ")));
+      $('#edit').append('<br>');
+    }
+    var tagName=$this.prop('tagName');
+    if (tagName != 'BR' ) {
+      console.log(prevTagName, tagName);
+      $this.remove();
+    }
+    prevTagName=tagName;
+});
 
   var content=$('#edit').html();
-  content=content.replaceAll('&nbsp;',' ');
+  console.log(content);
+  content=content.replaceAll('<br> <br>','<br>');
   content=content.replaceAll('--','-');
   content=content.replaceAll('....','...');
-  content=content.replaceAll('<div><br></div><div><br></div>','<div><br></div>');
-  content=content.replaceAll('<div><div>','<div>');
-  content=content.replaceAll('</div></div>','</div>');
-  content=content.replaceAll('<div></div><div></div>','<div></div>');
   content=content.replace(/^ /g,'');
   content=content.replace(/-/g,' - ');
   content=content.replace(/\+/g,' + ');
@@ -61,6 +72,7 @@ $('#replace').on('click', function(e){
   content=content.replace(/=/g,' = ');
   content=content.replace(/\(/g,' (');
   content=content.replace(/\( /g,'(');
+
 
   for (var i = 0; i < irasjelek.length; i++) {
     var irasjel = irasjelek.charAt(i);
@@ -72,4 +84,5 @@ $('#replace').on('click', function(e){
 
 
   $('#edit').html(content);
+
 });
