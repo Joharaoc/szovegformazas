@@ -27,7 +27,7 @@ $('#replace').on('click', function(e){
   }
 
   var html=$('#edit').html()
-  var text = html.replace(/<[^(a)(br)(div)(p)][^>]+>/g, '');
+  var text = html.replace(/<[^(br)(div)(p)][^>]+>/g, '');
   text=text.replace(/<div[^>]+>/g, '<br>')
   text=text.replace(/<p[^>]+>/g, '<br>')
   text=text.replace(/<br>\s*<br>\s*<br>/gm, '<br><br>')
