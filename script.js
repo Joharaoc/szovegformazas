@@ -39,12 +39,9 @@
       {re:/([\(]) /g, to:'$1'},
     ];
 
-    let html=el.html()
-
-    for (let i = 0; i < replaceRules.length; i++) {
-      let rule=replaceRules[i];
-      html=html.replace(rule.re, rule.to);
-    }
-    return html;
+    return replaceRules.reduce(
+      (acc,{re,to})=>acc.replace(re,to),
+      el.html()
+    );
   }
 })();
